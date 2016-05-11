@@ -21,6 +21,7 @@ public class Main {
         LoginJFrame login_frame = new LoginJFrame();
         login_frame.setVisible(true);
         System.out.println("pkg42client.Main.main()");
+        //this is a comment made from my desktop
         // TODO code application logic here
         
     }
