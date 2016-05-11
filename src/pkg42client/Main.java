@@ -21,7 +21,7 @@ public class Main {
         LoginJFrame login_frame = new LoginJFrame();
         login_frame.setVisible(true);
         // TODO code application logic here
-        
+        System.out.println("mimimi");
     }
     
 }
