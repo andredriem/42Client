@@ -9,14 +9,24 @@ package pkg42client;
  *
  * @author andre
  */
-public abstract class Dish {
+public class Dish {
     
     
     
     //Atributes not final.
     private String name;
     private int id;
-    private float price;
+    private float price; 
+    private String description;
+    
+    
+    private boolean gluten;
+    private boolean vegan;
+    private boolean vegetarian;
+    private boolean lactose;
+    
+  
+    
     
     public Dish(){
         
