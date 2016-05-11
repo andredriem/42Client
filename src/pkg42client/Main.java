@@ -20,6 +20,7 @@ public class Main {
     public static void main(String[] args) {
         LoginJFrame login_frame = new LoginJFrame();
         login_frame.setVisible(true);
+        System.out.println("pkg42client.Main.main()");
         // TODO code application logic here
         
     }
