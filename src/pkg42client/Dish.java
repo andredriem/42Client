@@ -13,7 +13,7 @@ public abstract class Dish {
     
     
     
-    //Atributer not final.
+    //Atributes not final.
     private String name;
     private int id;
     private float price;
