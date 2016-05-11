@@ -20,8 +20,12 @@ public class Main {
     public static void main(String[] args) {
         LoginJFrame login_frame = new LoginJFrame();
         login_frame.setVisible(true);
-        // TODO code application logic here
-        System.out.println("mimimi");
+        
+        
+        //Socket simple test (expected to fail)
+        MainSocket test = new MainSocket("192.0.0.0",300);
+        
+        
     }
     
 }
