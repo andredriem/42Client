@@ -9,6 +9,18 @@ package pkg42client;
  *
  * @author andre
  */
-public class Dish {
+public abstract class Dish {
+    
+    
+    
+    //Atributer not final.
+    private String name;
+    private int id;
+    private float price;
+    
+    public Dish(){
+        
+    }
+    
     
 }
