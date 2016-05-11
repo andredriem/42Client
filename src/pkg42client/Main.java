@@ -9,7 +9,7 @@ import pkg42client.GUI.LoginJFrame;
 
 
 /**
- *
+ * Class main probably will only open the login GUI.
  * @author andre
  */
 public class Main {
@@ -20,8 +20,6 @@ public class Main {
     public static void main(String[] args) {
         LoginJFrame login_frame = new LoginJFrame();
         login_frame.setVisible(true);
-        System.out.println("pkg42client.Main.main()");
-        //this is a comment made from my desktop
         // TODO code application logic here
         
     }
