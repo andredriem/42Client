@@ -6,16 +6,21 @@
 package pkg42client;
 
 import java.util.ArrayList;
+import java.net.*;
+import java.io.*;
 
 /**
  *This class handles all the comunication with the server.
  *For this first version only getMenu() and login() will be implemented. 
  * @author aacdriemeyer
  */
-public abstract class MainSocket {
+public class MainSocket {
     
     private String ip;
     private int port;
+    private Socket client;
+    private OutputStream toServer;
+    private InputStream fromServer;
 
     
     /**
@@ -27,6 +32,8 @@ public abstract class MainSocket {
     public MainSocket(String ip, int port){
         this.ip = ip;
         this.port = port;
+        client = new Socket();
+        connectServer();
     }
     
     /**
@@ -67,7 +74,15 @@ public abstract class MainSocket {
      * Checks if client is connected to server, if not: connects to server.
      */
     private void connectServer(){
-        //TODO
+        if(!client.isConnected()){
+            try{
+                client = new Socket(ip,port);
+                toServer = client.getOutputStream();
+                fromServer = client.getInputStream();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
     }
     
     
@@ -77,13 +92,13 @@ public abstract class MainSocket {
      * @param password
      * @return User type ex:"Maneger","Costumer","Waitress".
      */
-    public abstract String login(String user, String password);
+    //public String login(String user, String password);
     
     /**
      * sends a dish to server to be added to the menu.
      * @param dish 
      */
-    public abstract void addDish(Dish dish);
+    //public void addDish(Dish dish);
     
     
      
