@@ -18,8 +18,8 @@ public class MainSocket {
     
     
     //COMMAND STRINGS
-    private static final String REQUEST_MENU_STR = "getMenu";
-     private static final String REQUEST_SEND_DISH_STR = "sendDish:";
+    private static final String REQUEST_MENU_STR = "getMenu\n";
+     private static final String REQUEST_SEND_DISH_STR = "sendDish:\n";
     
     //CONSTANTS
     private static final int DISH_CSV = 8;
@@ -41,7 +41,7 @@ public class MainSocket {
         this.ip = ip;
         this.port = port;
         client = new Socket();
-        connectServer();
+        //connectServer();
     }
     
     
@@ -96,15 +96,15 @@ public class MainSocket {
      * Checks if client is connected to server, if not: connects to server.
      */
     private void connectServer(){
-        if(!client.isConnected()){
-            try{
-                client = new Socket(ip,port);
-                toServer = new DataOutputStream(client.getOutputStream());
-                fromServer = new BufferedReader(new InputStreamReader(client.getInputStream()));
-            }catch(IOException e){
-                e.printStackTrace();
-            }
+
+        try{
+            client = new Socket(ip,port);
+            toServer = new DataOutputStream(client.getOutputStream());
+            fromServer = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        }catch(IOException e){
+            e.printStackTrace();
         }
+
     }
     
     

@@ -5,17 +5,23 @@
  */
 package pkg42client.GUI;
 
+import pkg42client.MainSocket;
+
 /**
  *
  * @author andre
  */
 public class LoginJFrame extends javax.swing.JFrame {
 
+    private  MainSocket test;
+    
+    
     /**
      * Creates new form LoginJFrame
      */
     public LoginJFrame() {
         initComponents();
+  
     }
 
     /**
@@ -80,7 +86,6 @@ public class LoginJFrame extends javax.swing.JFrame {
 
     private void jConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfirmButtonActionPerformed
         // TODO add your handling code here:
-        System.out.println("pkg42client.LoginJFrame.jConfirmButtonActionPerformed()");
     }//GEN-LAST:event_jConfirmButtonActionPerformed
 
     /**
