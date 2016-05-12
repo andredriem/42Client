@@ -23,7 +23,8 @@ public class Main {
         
         
         //Socket simple test (expected to fail)
-        MainSocket test = new MainSocket("192.0.0.0",300);
+        MainSocket test = new MainSocket("localhost",8888);
+        test.getMenu();
         
         
     }

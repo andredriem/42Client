@@ -20,6 +20,9 @@ public class MainSocket {
     //COMMAND STRINGS
     private static final String REQUEST_MENU_STR = "getmenu";
     
+    //CONSTANTS
+    private static final int DISH_CSV = 8;
+    
     private String ip;
     private int port;
     private Socket client;
@@ -59,14 +62,21 @@ public class MainSocket {
      * 
      * @return gets All dishes from the server
      */
-    public  ArrayList<Dish> getMenu() throws IOException{     
+    public  ArrayList<Dish> getMenu() {     
         //Try to connect with server in case if connection is lost
-        connectServer();
-        String dishes_csv;      
-        toServer.writeBytes(REQUEST_MENU_STR+'\n');  
-        dishes_csv = fromServer.readLine();
-        ArrayList<Dish> dishes =  CSVtoDishes(dishes_csv);
-        return dishes;
+        try{
+            connectServer();
+            String dishes_csv;      
+            toServer.writeBytes(REQUEST_MENU_STR+'\n'); 
+            dishes_csv = fromServer.readLine();
+            ArrayList<Dish> dishes =  CSVtoDishes(dishes_csv);
+            return dishes; 
+            
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        return null;
     }
     
     
@@ -90,10 +100,34 @@ public class MainSocket {
     //TODO
     /**
      * Given a CSV string returns a Dish class it represents
+     * CSV_DISHES_PADRÃO = "name[STRING],id[INT],price[INT],description[STRING],
+     * gluten[BOOL],vegan[BOOL],vegetarian[BOOL],lactose[BOOL]"
      * @param CSV
      * @return Dish class with information given by CSV
      */
-    private ArrayList<Dish>  CSVtoDishes(String CSV){return new ArrayList<>();};
+    private ArrayList<Dish>  CSVtoDishes(String CSV){  
+        ArrayList<Dish> listDishes = new ArrayList<>();
+        String[] list_of_csvs = CSV.split(";");
+        int i;
+        
+        for(i=0;i<list_of_csvs.length;i++){
+            
+            String[] a_csv = list_of_csvs[i].split(",");
+            if(a_csv.length != DISH_CSV) throw new SecurityException("invalid CSV");
+            Dish tempDish = new Dish(
+                    a_csv[0], //name
+                    Integer.parseInt(a_csv[1]), //id
+                    Float.parseFloat(a_csv[2]), //price
+                    a_csv[3], //description
+                    Boolean.valueOf(a_csv[4]), //gluten
+                    Boolean.valueOf(a_csv[5]), //vegan
+                    Boolean.valueOf(a_csv[6]), //vegetarian
+                    Boolean.valueOf(a_csv[7]) //lactose
+            );
+            listDishes.add(tempDish);
+        }
+        return listDishes; 
+    }
             
     
     
