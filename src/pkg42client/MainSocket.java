@@ -18,7 +18,8 @@ public class MainSocket {
     
     
     //COMMAND STRINGS
-    private static final String REQUEST_MENU_STR = "getmenu";
+    private static final String REQUEST_MENU_STR = "getMenu()";
+     private static final String REQUEST_SEND_DISH_STR = "sendDish:";
     
     //CONSTANTS
     private static final int DISH_CSV = 8;
@@ -67,7 +68,7 @@ public class MainSocket {
         try{
             connectServer();
             String dishes_csv;      
-            toServer.writeBytes(REQUEST_MENU_STR+'\n'); 
+            toServer.writeBytes(REQUEST_MENU_STR); 
             dishes_csv = fromServer.readLine();
             ArrayList<Dish> dishes =  CSVtoDishes(dishes_csv);
             return dishes; 
@@ -78,6 +79,27 @@ public class MainSocket {
 
         return null;
     }
+    
+    public void sendDish(Dish dish){
+        connectServer();
+        try{
+            toServer.writeBytes(REQUEST_SEND_DISH_STR+
+                    dish.getName()+","+
+                    dish.getId()+","+
+                    dish.getPrice()+","+
+                    dish.getDescription()+","+
+                    dish.isGluten()+","+
+                    dish.isVegan()+","+
+                    dish.isVegetarian()+","+
+                    dish.isLactose()    
+                    );
+            if(fromServer.readLine()!="sent") throw new SecurityException("invalid CSV");
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        
+    } 
+    
     
     
     /**
@@ -105,7 +127,7 @@ public class MainSocket {
      * @param CSV
      * @return Dish class with information given by CSV
      */
-    private ArrayList<Dish>  CSVtoDishes(String CSV){  
+    public ArrayList<Dish>  CSVtoDishes(String CSV){  
         ArrayList<Dish> listDishes = new ArrayList<>();
         String[] list_of_csvs = CSV.split(";");
         int i;

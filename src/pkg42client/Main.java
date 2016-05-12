@@ -24,7 +24,7 @@ public class Main {
         
         //Socket simple test (expected to fail)
         MainSocket test = new MainSocket("localhost",8888);
-        test.getMenu();
+        test.sendDish(test.CSVtoDishes("pizza,0,30,uma pizza,ture,false,false,true").get(0));
         
         
     }
