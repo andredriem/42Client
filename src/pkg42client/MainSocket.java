@@ -18,7 +18,7 @@ public class MainSocket {
     
     
     //COMMAND STRINGS
-    private static final String REQUEST_MENU_STR = "getMenu()";
+    private static final String REQUEST_MENU_STR = "getMenu";
      private static final String REQUEST_SEND_DISH_STR = "sendDish:";
     
     //CONSTANTS
@@ -44,19 +44,6 @@ public class MainSocket {
         connectServer();
     }
     
-    /**
-     * @return the ip
-     */
-    public String getIp() {
-        return ip;
-    }
-
-    /**
-     * @return the port
-     */
-    public int getPort() {
-        return port;
-    }
     
     
     /**
@@ -94,9 +81,12 @@ public class MainSocket {
                     dish.isLactose()    
                     );
             if(fromServer.readLine()!="sent") throw new SecurityException("invalid CSV");
+            client.close();
         }catch(IOException e){
             e.printStackTrace();
+            
         }
+        
         
     } 
     
@@ -119,7 +109,7 @@ public class MainSocket {
     
     
     
-    //TODO
+    
     /**
      * Given a CSV string returns a Dish class it represents
      * CSV_DISHES_PADRÃO = "name[STRING],id[INT],price[INT],description[STRING],
@@ -163,11 +153,6 @@ public class MainSocket {
     //public String login(String user, String password);
     
     
-    //TODO
-    /**
-     * sends a dish to server to be added to the menu.
-     * @param dish 
-     */
-    //public void addDish(Dish dish); 
+
     
 }

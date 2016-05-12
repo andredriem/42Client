@@ -21,11 +21,8 @@ public class Main {
         LoginJFrame login_frame = new LoginJFrame();
         login_frame.setVisible(true);
         
-        
-        //Socket simple test (expected to fail)
         MainSocket test = new MainSocket("localhost",8888);
-        test.sendDish(test.CSVtoDishes("pizza,0,30,uma pizza,ture,false,false,true").get(0));
-        
+        test.getMenu();
         
     }
     
