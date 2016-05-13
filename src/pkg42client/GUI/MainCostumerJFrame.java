@@ -26,16 +26,13 @@ public class MainCostumerJFrame extends javax.swing.JFrame {
 
         MainSocket main_socket = new MainSocket("localhost",8888);
         ArrayList<Dish> dishes = main_socket.getMenu();
-        System.out.println(dishes.get(0).getName());
         int i;
         DefaultListModel temp = new DefaultListModel();
         
         for(i=0;i<dishes.size();i++){
-            System.out.println("here2");
-            temp.addElement(dishes.get(i).getName());
+            temp.addElement("<html>"+dishes.get(i).getName()+"   preco:"+Float.toString(dishes.get(i).getPrice())+"<br>Descricao: "+dishes.get(i).getDescription());
         }
         jMenuList.setModel(temp);
-        System.out.println("here2");
         
     }
 
