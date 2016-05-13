@@ -5,13 +5,7 @@
  */
 package pkg42client;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
 import pkg42client.GUI.LoginJFrame;
 
 
@@ -25,17 +19,13 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //LoginJFrame login_frame = new LoginJFrame();
-        //login_frame.setVisible(true);
-        
-        MainSocket test = new MainSocket("localhost",8888);
-        test.getMenu();
-        System.out.println("finished");
-        test.getMenu();
-        System.out.println("finished2");
-        
+        LoginJFrame login_frame = new LoginJFrame();
+        login_frame.setVisible(true);
         
 
+        
+        
+        
     }
     
 }
