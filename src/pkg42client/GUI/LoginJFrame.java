@@ -85,7 +85,12 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jAccountTextFieldActionPerformed
 
     private void jConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfirmButtonActionPerformed
-        // TODO add your handling code here:
+
+        if(jAccountTextField.getText().compareTo("client") == 0){
+            MainCostumerJFrame costumerJFrame = new MainCostumerJFrame();
+            this.setVisible(false);
+            costumerJFrame.setVisible(true);
+        }
     }//GEN-LAST:event_jConfirmButtonActionPerformed
 
     /**
