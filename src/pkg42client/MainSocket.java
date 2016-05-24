@@ -5,6 +5,7 @@
  */
 package pkg42client;
 
+import Data.Dish;
 import java.util.ArrayList;
 import java.net.*;
 import java.io.*;

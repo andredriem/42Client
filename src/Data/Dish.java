@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg42client;
+package Data;
 
 /**
  *
  * @author andre
  */
-public class Dish {
+public class Dish extends AbstractDataFromServer{
     
     
     
@@ -28,6 +28,8 @@ public class Dish {
   
     
     public Dish(String name, int id, float price, String description, boolean gluten, boolean vegan, boolean vegetarian, boolean lactose) {
+        
+        super();
         this.name = name;
         this.id = id;
         this.price = price;
@@ -94,5 +96,63 @@ public class Dish {
         return lactose;
     }
     
-    
+    public void sendDish(){
+            mainSocket.sendDish(this);
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * @param gluten the gluten to set
+     */
+    public void setGluten(boolean gluten) {
+        this.gluten = gluten;
+    }
+
+    /**
+     * @param vegan the vegan to set
+     */
+    public void setVegan(boolean vegan) {
+        this.vegan = vegan;
+    }
+
+    /**
+     * @param vegetarian the vegetarian to set
+     */
+    public void setVegetarian(boolean vegetarian) {
+        this.vegetarian = vegetarian;
+    }
+
+    /**
+     * @param lactose the lactose to set
+     */
+    public void setLactose(boolean lactose) {
+        this.lactose = lactose;
+    }
 }

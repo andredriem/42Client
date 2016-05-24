@@ -8,7 +8,7 @@ package pkg42client.GUI;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
-import pkg42client.Dish;
+import Data.Dish;
 import pkg42client.MainSocket;
 
 /**
