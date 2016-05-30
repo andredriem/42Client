@@ -11,7 +11,7 @@ package Data;
  */
 public class Dish extends AbstractDataFromServer{
     
-    
+            
     
     //Atributes not final.
     private String name;
@@ -155,4 +155,5 @@ public class Dish extends AbstractDataFromServer{
     public void setLactose(boolean lactose) {
         this.lactose = lactose;
     }
+    
 }

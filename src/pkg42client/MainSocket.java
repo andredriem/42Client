@@ -51,15 +51,14 @@ public class MainSocket {
      * 
      * @return gets All dishes from the server
      */
-    public  ArrayList<Dish> getMenu() {     
+    public  String getMenu() {     
         //Try to connect with server in case if connection is lost
         try{
             connectServer();
             String dishes_csv;      
             toServer.writeBytes(REQUEST_MENU_STR); 
             dishes_csv = fromServer.readLine();
-            ArrayList<Dish> dishes =  CSVtoDishes(dishes_csv);
-            return dishes; 
+            return dishes_csv; 
             
         }catch(IOException e){
             e.printStackTrace();
@@ -118,41 +117,8 @@ public class MainSocket {
      * @param CSV
      * @return Dish class with information given by CSV
      */
-    public ArrayList<Dish>  CSVtoDishes(String CSV){  
-        ArrayList<Dish> listDishes = new ArrayList<>();
-        String[] list_of_csvs = CSV.split(";");
-        int i;
-        
-        for(i=0;i<list_of_csvs.length;i++){
             
-            String[] a_csv = list_of_csvs[i].split(",");
-            if(a_csv.length != DISH_CSV) throw new SecurityException("invalid CSV");
-            Dish tempDish = new Dish(
-                    a_csv[0], //name
-                    Integer.parseInt(a_csv[1]), //id
-                    Float.parseFloat(a_csv[2]), //price
-                    a_csv[3], //description
-                    Boolean.valueOf(a_csv[4]), //gluten
-                    Boolean.valueOf(a_csv[5]), //vegan
-                    Boolean.valueOf(a_csv[6]), //vegetarian
-                    Boolean.valueOf(a_csv[7]) //lactose
-            );
-            listDishes.add(tempDish);
-        }
-        return listDishes; 
-    }
-            
-    
-    
-    //TODO
-    /**
-     * 
-     * @param user
-     * @param password
-     * @return User type ex:"Maneger","Costumer","Waitress".
-     */
-    //public String login(String user, String password);
-    
+
     
 
     
