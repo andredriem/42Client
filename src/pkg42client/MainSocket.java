@@ -20,7 +20,7 @@ public class MainSocket {
     
     //COMMAND STRINGS
     private static final String REQUEST_MENU_STR = "getMenu\n";
-     private static final String REQUEST_SEND_DISH_STR = "sendDish:\n";
+     private static final String REQUEST_SEND_DISH_STR = "sendDish@";
     
     //CONSTANTS
     private static final int DISH_CSV = 8;
@@ -71,14 +71,15 @@ public class MainSocket {
         connectServer();
         try{
             toServer.writeBytes(REQUEST_SEND_DISH_STR+
-                    dish.getName()+","+
-                    dish.getId()+","+
-                    dish.getPrice()+","+
-                    dish.getDescription()+","+
-                    dish.isGluten()+","+
-                    dish.isVegan()+","+
-                    dish.isVegetarian()+","+
-                    dish.isLactose()    
+                    dish.getName()+":"+
+                    dish.getId()+":"+
+                    dish.getPrice()+":"+
+                    dish.getDescription()+":"+
+                    dish.isGluten()+":"+
+                    dish.isVegan()+":"+
+                    dish.isVegetarian()+":"+
+                    dish.isLactose()+
+                    "\n"
                     );
             if(fromServer.readLine()!="sent") throw new SecurityException("invalid CSV");
             client.close();

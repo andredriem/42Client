@@ -36,12 +36,13 @@ public class Menu extends AbstractDataFromServer{
     
     private ArrayList<Dish>  CSVtoDishes(String CSV){  
     ArrayList<Dish> listDishes = new ArrayList<>();
-    String[] list_of_csvs = CSV.split(";");
+    String[] list_of_csvs = CSV.split("&");
+        System.err.println(list_of_csvs[0]);
     int i;
 
     for(i=0;i<list_of_csvs.length;i++){
 
-        String[] a_csv = list_of_csvs[i].split(",");
+        String[] a_csv = list_of_csvs[i].split(":");
         if(a_csv.length != DISH_CSV) throw new SecurityException("invalid CSV");
         Dish tempDish = new Dish(
                 a_csv[0], //name
