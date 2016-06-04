@@ -15,7 +15,7 @@ import java.io.*;
  *For this first version only getMenu() and login() will be implemented. 
  * @author aacdriemeyer
  */
-public class MainSocket {
+public class ClientSocket {
     
     
     //COMMAND STRINGS
@@ -38,7 +38,7 @@ public class MainSocket {
      * located ex: "127.0.0.1".
      * @param port port choosen for communication with server.
      */
-    public MainSocket(String ip, int port){
+    public ClientSocket(String ip, int port){
         this.ip = ip;
         this.port = port;
         client = new Socket();

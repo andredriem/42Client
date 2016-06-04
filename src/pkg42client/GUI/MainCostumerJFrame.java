@@ -10,7 +10,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 import Data.Dish;
 import Data.Menu;
-import pkg42client.MainSocket;
+import pkg42client.ClientSocket;
 
 /**
  *

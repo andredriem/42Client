@@ -5,7 +5,7 @@
  */
 package Data;
 
-import pkg42client.MainSocket;
+import pkg42client.ClientSocket;
 
 /**
  *
@@ -13,12 +13,12 @@ import pkg42client.MainSocket;
  */
 public class AbstractDataFromServer {
     
-    public MainSocket mainSocket;
+    public ClientSocket mainSocket;
 
     
     
     public AbstractDataFromServer() {
-        mainSocket = new MainSocket("localhost",8888);
+        mainSocket = new ClientSocket("localhost",8888);
     }
     
     

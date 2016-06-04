@@ -5,7 +5,7 @@
  */
 package pkg42client.GUI;
 
-import pkg42client.MainSocket;
+import pkg42client.ClientSocket;
 
 /**
  *
@@ -13,7 +13,7 @@ import pkg42client.MainSocket;
  */
 public class LoginJFrame extends javax.swing.JFrame {
 
-    private  MainSocket test;
+    private  ClientSocket test;
     
     
     /**
