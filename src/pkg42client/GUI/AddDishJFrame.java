@@ -51,7 +51,7 @@ public class AddDishJFrame extends javax.swing.JFrame {
 
         veganJCheckBox.setText("Vegano");
 
-        glutemJCheckBox.setText("Glutem");
+        glutemJCheckBox.setText("Glúten");
 
         LactoseJCheckBox.setText("Lactose");
 

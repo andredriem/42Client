@@ -120,7 +120,7 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="glutemJCheckBox">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Glutem"/>
+        <Property name="text" type="java.lang.String" value="Gl&#xfa;ten"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="LactoseJCheckBox">
