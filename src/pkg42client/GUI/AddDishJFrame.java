@@ -29,62 +29,76 @@ public class AddDishJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        vegetarianJCheckBox = new javax.swing.JCheckBox();
-        veganJCheckBox = new javax.swing.JCheckBox();
-        glutemJCheckBox = new javax.swing.JCheckBox();
-        LactoseJCheckBox = new javax.swing.JCheckBox();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jSpinner2 = new javax.swing.JSpinner();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        cboxVegetarianoAddDish = new javax.swing.JCheckBox();
+        cboxVeganoAddDish = new javax.swing.JCheckBox();
+        cboxGlutenAddDish = new javax.swing.JCheckBox();
+        cboxLactoseAddDish = new javax.swing.JCheckBox();
+        txtNomeAddDish = new javax.swing.JTextField();
+        lblNomeAddDish = new javax.swing.JLabel();
+        lblDescricaoAddDish = new javax.swing.JLabel();
+        lblPrecoAddDish = new javax.swing.JLabel();
+        lblIDAddDish = new javax.swing.JLabel();
+        btnEnviarAddDish = new javax.swing.JButton();
+        lblAddDish = new javax.swing.JLabel();
+        jspAddDish = new javax.swing.JScrollPane();
+        txtDescricaoAddDish = new javax.swing.JTextArea();
+        txtPrecoAddDish = new javax.swing.JFormattedTextField();
+        txtIDAddDish = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         setType(java.awt.Window.Type.POPUP);
-
-        vegetarianJCheckBox.setText("Vegetariano");
-
-        veganJCheckBox.setText("Vegano");
-
-        glutemJCheckBox.setText("Glúten");
-
-        LactoseJCheckBox.setText("Lactose");
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                formComponentHidden(evt);
             }
         });
 
-        jLabel1.setText("Nome:");
+        cboxVegetarianoAddDish.setText("Vegetariano");
 
-        jLabel2.setText("Descrição:");
+        cboxVeganoAddDish.setText("Vegano");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        cboxGlutenAddDish.setText("Glúten");
+
+        cboxLactoseAddDish.setText("Lactose");
+
+        txtNomeAddDish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtNomeAddDishActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Preço:");
+        lblNomeAddDish.setText("Nome:");
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(10.0f), Float.valueOf(0.0f), null, Float.valueOf(1.0f)));
+        lblDescricaoAddDish.setText("Descrição:");
 
-        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+        lblPrecoAddDish.setText("Preço:");
 
-        jLabel4.setText("ID:");
+        lblIDAddDish.setText("ID:");
 
-        jButton1.setText("Enviar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnEnviarAddDish.setText("Enviar");
+        btnEnviarAddDish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnEnviarAddDishActionPerformed(evt);
             }
         });
+
+        lblAddDish.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblAddDish.setText("Adicionar Prato");
+
+        txtDescricaoAddDish.setColumns(20);
+        txtDescricaoAddDish.setRows(5);
+        jspAddDish.setViewportView(txtDescricaoAddDish);
+
+        txtPrecoAddDish.setToolTipText("Preço do produto");
+        txtPrecoAddDish.setSelectionColor(new java.awt.Color(102, 153, 255));
+        txtPrecoAddDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrecoAddDishActionPerformed(evt);
+            }
+        });
+
+        txtIDAddDish.setToolTipText("ID do produto");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,91 +108,97 @@ public class AddDishJFrame extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(glutemJCheckBox)
-                        .addGap(18, 18, 18)
-                        .addComponent(veganJCheckBox)
-                        .addGap(18, 18, 18)
-                        .addComponent(vegetarianJCheckBox)
-                        .addGap(18, 18, 18)
-                        .addComponent(LactoseJCheckBox)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNomeAddDish)
+                            .addComponent(lblDescricaoAddDish)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtNomeAddDish, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(lblPrecoAddDish)
+                                    .addGap(115, 115, 115)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(lblIDAddDish)
+                                            .addGap(74, 74, 74))
+                                        .addComponent(txtIDAddDish))))
+                            .addComponent(lblAddDish))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(67, 67, 67)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel4)))))
-                        .addContainerGap(23, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(143, 143, 143))
+                            .addComponent(btnEnviarAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jspAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cboxGlutenAddDish)
+                                .addGap(18, 18, 18)
+                                .addComponent(cboxVeganoAddDish)
+                                .addGap(18, 18, 18)
+                                .addComponent(cboxVegetarianoAddDish)
+                                .addGap(18, 18, 18)
+                                .addComponent(cboxLactoseAddDish))
+                            .addComponent(txtPrecoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 39, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
+                .addContainerGap()
+                .addComponent(lblAddDish)
+                .addGap(21, 21, 21)
+                .addComponent(lblNomeAddDish)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNomeAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(lblIDAddDish)
+                    .addComponent(lblPrecoAddDish))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addComponent(jLabel2)
+                    .addComponent(txtPrecoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIDAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblDescricaoAddDish)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jspAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(glutemJCheckBox)
-                    .addComponent(veganJCheckBox)
-                    .addComponent(vegetarianJCheckBox)
-                    .addComponent(LactoseJCheckBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(19, 19, 19))
+                    .addComponent(cboxGlutenAddDish)
+                    .addComponent(cboxVeganoAddDish)
+                    .addComponent(cboxVegetarianoAddDish)
+                    .addComponent(cboxLactoseAddDish))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEnviarAddDish)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtNomeAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeAddDishActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtNomeAddDishActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnEnviarAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarAddDishActionPerformed
         
-        Dish dish = new Dish(jTextField1.getText(),
-                            (Integer)jSpinner2.getValue(),
-                            (Float)jSpinner1.getValue(),
-                            jTextField2.getText(),
-                            glutemJCheckBox.isSelected(),
-                            veganJCheckBox.isSelected(),
-                            vegetarianJCheckBox.isSelected(),
-                            LactoseJCheckBox.isSelected());
+        Dish dish = new Dish(txtNomeAddDish.getText(),
+                            Integer.parseInt(txtIDAddDish.toString()),
+                            Integer.parseInt(txtPrecoAddDish.toString()),
+                            txtDescricaoAddDish.getText(),
+                            cboxGlutenAddDish.isSelected(),
+                            cboxVeganoAddDish.isSelected(),
+                            cboxVegetarianoAddDish.isSelected(),
+                            cboxLactoseAddDish.isSelected());
         dish.sendDish();
                 
                
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnEnviarAddDishActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_formComponentHidden
+
+    private void txtPrecoAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecoAddDishActionPerformed
+        
+    }//GEN-LAST:event_txtPrecoAddDishActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,18 +236,20 @@ public class AddDishJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox LactoseJCheckBox;
-    private javax.swing.JCheckBox glutemJCheckBox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JCheckBox veganJCheckBox;
-    private javax.swing.JCheckBox vegetarianJCheckBox;
+    private javax.swing.JButton btnEnviarAddDish;
+    private javax.swing.JCheckBox cboxGlutenAddDish;
+    private javax.swing.JCheckBox cboxLactoseAddDish;
+    private javax.swing.JCheckBox cboxVeganoAddDish;
+    private javax.swing.JCheckBox cboxVegetarianoAddDish;
+    private javax.swing.JScrollPane jspAddDish;
+    private javax.swing.JLabel lblAddDish;
+    private javax.swing.JLabel lblDescricaoAddDish;
+    private javax.swing.JLabel lblIDAddDish;
+    private javax.swing.JLabel lblNomeAddDish;
+    private javax.swing.JLabel lblPrecoAddDish;
+    private javax.swing.JTextArea txtDescricaoAddDish;
+    private javax.swing.JTextField txtIDAddDish;
+    private javax.swing.JTextField txtNomeAddDish;
+    private javax.swing.JFormattedTextField txtPrecoAddDish;
     // End of variables declaration//GEN-END:variables
 }
