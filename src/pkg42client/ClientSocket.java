@@ -7,6 +7,7 @@ package pkg42client;
 
 import Data.Dish;
 import Data.Message;
+import Data.Menu;
 import java.util.ArrayList;
 import java.net.*;
 import java.io.*;
@@ -23,6 +24,7 @@ public class ClientSocket {
     private static final String REQUEST_MENU_STR = "getMenu@";
     private static final String REQUEST_SEND_DISH_STR = "sendDish@";
     private static final String REQUEST_SEND_MESSAGE_STR = "sendMessage@";
+    private static final String REQUEST_GET_DISH_STR = "getDish@";
     
     //CONSTANTS
     private static final int DISH_CSV = 8;
@@ -50,7 +52,6 @@ public class ClientSocket {
     
     
     /**
-     * 
      * @return gets All dishes from the server
      */
     public  String getMenu() {     
@@ -109,8 +110,27 @@ public class ClientSocket {
             
         }       
     }
-   
-    
+/*
+    public Dish getSpecifcDish(String dishName){
+            Dish dish = null;
+            connectServer();
+        try{
+            Menu menu = new Menu();
+            ArrayList<Dish> dishes = menu.getDishes();
+                  for(Dish d : dishes){
+        if(d.getName() != null && d.getName().contains(search))
+           //something here
+    }
+            
+        
+        }catch(IOException e){
+            e.printStackTrace();
+            
+        } 
+        
+        return dish;
+    }
+    */
     
     
     
@@ -141,7 +161,4 @@ public class ClientSocket {
      */
             
 
-    
-
-    
 }
