@@ -6,6 +6,7 @@
 package pkg42client;
 
 import Data.Dish;
+import Data.Message;
 import java.util.ArrayList;
 import java.net.*;
 import java.io.*;
@@ -19,8 +20,9 @@ public class ClientSocket {
     
     
     //COMMAND STRINGS
-    private static final String REQUEST_MENU_STR = "getMenu\n";
-     private static final String REQUEST_SEND_DISH_STR = "sendDish@";
+    private static final String REQUEST_MENU_STR = "getMenu@";
+    private static final String REQUEST_SEND_DISH_STR = "sendDish@";
+    private static final String REQUEST_SEND_MESSAGE_STR = "sendMessage@";
     
     //CONSTANTS
     private static final int DISH_CSV = 8;
@@ -90,6 +92,21 @@ public class ClientSocket {
         
         
     } 
+    
+    public void sendMessage(Message message){
+        connectServer();
+        try{
+            toServer.writeBytes(REQUEST_SEND_MESSAGE_STR+
+                    message.getMessage()+
+                    "\n");
+            if(fromServer.readLine()!="sent") throw new SecurityException("invalid CSV");
+            client.close();
+        }catch(IOException e){
+            e.printStackTrace();
+            
+        }       
+    }
+    
     
     
     
