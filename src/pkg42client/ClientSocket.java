@@ -111,6 +111,21 @@ public class ClientSocket {
     }
     
     
+    public void sendMessage(Message message){
+        connectServer();
+        try{
+            toServer.writeBytes(REQUEST_SEND_MESSAGE_STR+
+                    message.getMessage()+
+                    "\n");
+            if(fromServer.readLine()!="sent") throw new SecurityException("invalid CSV");
+            client.close();
+        }catch(IOException e){
+            e.printStackTrace();
+            
+        }       
+    }
+    
+    
     
     
     /**
