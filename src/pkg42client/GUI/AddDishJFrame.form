@@ -32,46 +32,37 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace pref="33" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnEnviarAddDish" min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="jspAddDish" min="-2" pref="328" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="cboxGlutenAddDish" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cboxVeganoAddDish" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cboxVegetarianoAddDish" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cboxLactoseAddDish" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblNomeAddDish" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDescricaoAddDish" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblAddDish" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNomeAddDish" alignment="0" min="-2" pref="208" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtPrecoAddDish" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
-                                  <Component id="lblPrecoAddDish" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblDescontoAddDish" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtDescontoAddDish" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblDescricaoAddDish" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnEnviarAddDish" min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="jspAddDish" max="32767" attributes="0"/>
+                      <Component id="txtNomeAddDish" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblNomeAddDish" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAddDish" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="cboxGlutenAddDish" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="cboxVeganoAddDish" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="cboxVegetarianoAddDish" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="cboxLactoseAddDish" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtTipoAddDish" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblTipoAddDish" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtIDAddDish" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
-                                  <Component id="lblIDAddDish" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtPrecoAddDish" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="lblTipoAddDish" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtDescontoAddDish" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
+                              <Component id="lblDescontoAddDish" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblPrecoAddDish" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTipoAddDish" min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -86,39 +77,33 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblAddDish" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblNomeAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblTipoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="lblNomeAddDish" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtNomeAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtTipoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="txtNomeAddDish" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblPrecoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblIDAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblDescontoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtPrecoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtIDAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtDescontoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="lblDescricaoAddDish" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
               <Component id="jspAddDish" min="-2" pref="134" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="cboxGlutenAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cboxVeganoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cboxVegetarianoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cboxLactoseAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblTipoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDescontoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPrecoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtPrecoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDescontoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtTipoAddDish" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnEnviarAddDish" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
@@ -166,11 +151,6 @@
         <Property name="text" type="java.lang.String" value="Pre&#xe7;o:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblIDAddDish">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ID:"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JButton" name="btnEnviarAddDish">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enviar"/>
@@ -212,11 +192,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecoAddDishActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtIDAddDish">
-      <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="ID do produto"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblTipoAddDish">
       <Properties>

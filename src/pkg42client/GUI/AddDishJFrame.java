@@ -37,13 +37,11 @@ public class AddDishJFrame extends javax.swing.JFrame {
         lblNomeAddDish = new javax.swing.JLabel();
         lblDescricaoAddDish = new javax.swing.JLabel();
         lblPrecoAddDish = new javax.swing.JLabel();
-        lblIDAddDish = new javax.swing.JLabel();
         btnEnviarAddDish = new javax.swing.JButton();
         lblAddDish = new javax.swing.JLabel();
         jspAddDish = new javax.swing.JScrollPane();
         txtDescricaoAddDish = new javax.swing.JTextArea();
         txtPrecoAddDish = new javax.swing.JFormattedTextField();
-        txtIDAddDish = new javax.swing.JTextField();
         lblTipoAddDish = new javax.swing.JLabel();
         txtTipoAddDish = new javax.swing.JTextField();
         lblDescontoAddDish = new javax.swing.JLabel();
@@ -78,8 +76,6 @@ public class AddDishJFrame extends javax.swing.JFrame {
 
         lblPrecoAddDish.setText("Preço:");
 
-        lblIDAddDish.setText("ID:");
-
         btnEnviarAddDish.setText("Enviar");
         btnEnviarAddDish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,8 +98,6 @@ public class AddDishJFrame extends javax.swing.JFrame {
             }
         });
 
-        txtIDAddDish.setToolTipText("ID do produto");
-
         lblTipoAddDish.setText("Tipo:");
 
         txtTipoAddDish.setToolTipText("Tipo do produto");
@@ -116,40 +110,34 @@ public class AddDishJFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnEnviarAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jspAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cboxGlutenAddDish)
-                        .addGap(18, 18, 18)
-                        .addComponent(cboxVeganoAddDish)
-                        .addGap(18, 18, 18)
-                        .addComponent(cboxVegetarianoAddDish)
-                        .addGap(18, 18, 18)
-                        .addComponent(cboxLactoseAddDish))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblNomeAddDish)
-                            .addComponent(lblDescricaoAddDish)
-                            .addComponent(lblAddDish)
-                            .addComponent(txtNomeAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPrecoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblPrecoAddDish))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblDescontoAddDish)
-                                    .addComponent(txtDescontoAddDish))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTipoAddDish)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTipoAddDish)
-                                    .addComponent(txtIDAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblIDAddDish))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblDescricaoAddDish)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnEnviarAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jspAddDish)
+                        .addComponent(txtNomeAddDish)
+                        .addComponent(lblNomeAddDish)
+                        .addComponent(lblAddDish)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(cboxGlutenAddDish)
+                            .addGap(18, 18, 18)
+                            .addComponent(cboxVeganoAddDish)
+                            .addGap(18, 18, 18)
+                            .addComponent(cboxVegetarianoAddDish)
+                            .addGap(18, 18, 18)
+                            .addComponent(cboxLactoseAddDish))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtPrecoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblTipoAddDish))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtDescontoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblDescontoAddDish))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblPrecoAddDish)
+                                .addComponent(txtTipoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -158,34 +146,30 @@ public class AddDishJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lblAddDish)
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNomeAddDish)
-                    .addComponent(lblTipoAddDish))
+                .addComponent(lblNomeAddDish)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNomeAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTipoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPrecoAddDish)
-                    .addComponent(lblIDAddDish)
-                    .addComponent(lblDescontoAddDish))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPrecoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIDAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDescontoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtNomeAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblDescricaoAddDish)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(jspAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboxGlutenAddDish)
                     .addComponent(cboxVeganoAddDish)
                     .addComponent(cboxVegetarianoAddDish)
                     .addComponent(cboxLactoseAddDish))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTipoAddDish)
+                    .addComponent(lblDescontoAddDish)
+                    .addComponent(lblPrecoAddDish))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPrecoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDescontoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTipoAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnEnviarAddDish)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
@@ -198,7 +182,7 @@ public class AddDishJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeAddDishActionPerformed
 
     private void btnEnviarAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarAddDishActionPerformed
-
+        
         Dish dish = new Dish(txtNomeAddDish.getText(),
                             txtDescricaoAddDish.getText(),
                             cboxGlutenAddDish.isSelected(),
@@ -266,13 +250,11 @@ public class AddDishJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblAddDish;
     private javax.swing.JLabel lblDescontoAddDish;
     private javax.swing.JLabel lblDescricaoAddDish;
-    private javax.swing.JLabel lblIDAddDish;
     private javax.swing.JLabel lblNomeAddDish;
     private javax.swing.JLabel lblPrecoAddDish;
     private javax.swing.JLabel lblTipoAddDish;
     private javax.swing.JTextField txtDescontoAddDish;
     private javax.swing.JTextArea txtDescricaoAddDish;
-    private javax.swing.JTextField txtIDAddDish;
     private javax.swing.JTextField txtNomeAddDish;
     private javax.swing.JFormattedTextField txtPrecoAddDish;
     private javax.swing.JTextField txtTipoAddDish;

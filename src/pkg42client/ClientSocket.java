@@ -22,7 +22,7 @@ public class ClientSocket {
     
     //COMMAND STRINGS
     private static final String REQUEST_MENU_STR = "getMenu@";
-    private static final String REQUEST_SEND_DISH_STR = "sendDish@";
+    private static final String REQUEST_SEND_DISH_STR = "insertDish@";
     private static final String REQUEST_SEND_MESSAGE_STR = "sendMessage@";
     private static final String REQUEST_GET_DISH_STR = "getDish@";
     
