@@ -73,19 +73,31 @@ public class ClientSocket {
     public void sendDish(Dish dish){
         connectServer();
         try{
-            toServer.writeBytes(REQUEST_SEND_DISH_STR+
-                    dish.getName()+":"+
-                    dish.getDescription()+":"+
-                    dish.isGluten()+":"+
-                    dish.isVegan()+":"+
-                    dish.isVegetarian()+":"+
-                    dish.isLactose()+":"+
-                    dish.getType()+":"+
-                    dish.getDiscount()+":"+
-                    dish.getPrice()+":"+                    
-                    "\n"
+            toServer.writeBytes(REQUEST_SEND_DISH_STR+"['"+
+                    dish.getName().toString()+"','"+
+                    dish.getDescription().toString()+"','"+
+                    dish.isGluten()+"','"+
+                    dish.isVegan()+"','"+
+                    dish.isVegetarian()+"','"+
+                    dish.isLactose()+"','"+
+                    dish.getType().toString()+"',"+
+                    (Float) dish.getDiscount()+","+
+                    (Float) dish.getPrice()+"]\n"
                     );
-            if(fromServer.readLine()!="sent") throw new SecurityException("invalid CSV");
+            System.out.println(REQUEST_SEND_DISH_STR+"['"+
+                    dish.getName().toString()+"','"+
+                    dish.getDescription().toString()+"','"+
+                    dish.isGluten()+"','"+
+                    dish.isVegan()+"','"+
+                    dish.isVegetarian()+"','"+
+                    dish.isLactose()+"','"+
+                    dish.getType().toString()+"',"+
+                    (Float) dish.getDiscount()+","+
+                    (Float) dish.getPrice()+"]\n");
+            String serverResponse = fromServer.readLine();
+            if(!(serverResponse.equals("true"))) throw new SecurityException("invalid CSV");
+            System.out.println(serverResponse);
+            
             client.close();
         }catch(IOException e){
             e.printStackTrace();
@@ -111,6 +123,7 @@ public class ClientSocket {
             
         }       
     }
+    
 /*
     public Dish getSpecifcDish(String dishName){
             Dish dish = null;
@@ -118,12 +131,10 @@ public class ClientSocket {
         try{
             Menu menu = new Menu();
             ArrayList<Dish> dishes = menu.getDishes();
-                  for(Dish d : dishes){
-        if(d.getName() != null && d.getName().contains(search))
-           //something here
-    }
-            
-        
+                for(Dish d : dishes){
+                    if(d.getName() != null && d.getName().contains(search))
+                    //something here
+                }
         }catch(IOException e){
             e.printStackTrace();
             
@@ -131,7 +142,7 @@ public class ClientSocket {
         
         return dish;
     }
-    */
+*/
     
     
     
