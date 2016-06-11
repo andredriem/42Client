@@ -21,7 +21,6 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() {
         initComponents();
-  
     }
 
     /**
@@ -33,13 +32,14 @@ public class LoginJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLoginLabel = new javax.swing.JLabel();
+        lblLoginLogin = new javax.swing.JLabel();
         jConfirmButton = new javax.swing.JToggleButton();
-        jAccountTextField = new javax.swing.JTextField();
+        txtLoginLogin = new javax.swing.JTextField();
+        lblLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLoginLabel.setText("Digite Seu Login:");
+        lblLoginLogin.setText("Digite Seu Login:");
 
         jConfirmButton.setText("Entrar");
         jConfirmButton.addActionListener(new java.awt.event.ActionListener() {
@@ -48,12 +48,15 @@ public class LoginJFrame extends javax.swing.JFrame {
             }
         });
 
-        jAccountTextField.setToolTipText("Seu Login");
-        jAccountTextField.addActionListener(new java.awt.event.ActionListener() {
+        txtLoginLogin.setToolTipText("Seu Login");
+        txtLoginLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jAccountTextFieldActionPerformed(evt);
+                txtLoginLoginActionPerformed(evt);
             }
         });
+
+        lblLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblLogin.setText("Faça seu login");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,17 +70,22 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLoginLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jAccountTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblLoginLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLoginLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblLogin)))
                 .addContainerGap(147, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jLoginLabel)
+                .addContainerGap()
+                .addComponent(lblLogin)
+                .addGap(95, 95, 95)
+                .addComponent(lblLoginLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jAccountTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtLoginLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
                 .addComponent(jConfirmButton)
                 .addGap(18, 18, 18))
@@ -86,19 +94,19 @@ public class LoginJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jAccountTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAccountTextFieldActionPerformed
+    private void txtLoginLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jAccountTextFieldActionPerformed
+    }//GEN-LAST:event_txtLoginLoginActionPerformed
 
     private void jConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfirmButtonActionPerformed
 
-        if(jAccountTextField.getText().compareTo("cliente") == 0){
+        if(txtLoginLogin.getText().compareTo("cliente") == 0){
             MainCostumerJFrame costumerJFrame = new MainCostumerJFrame();
             this.setVisible(false);
             costumerJFrame.setVisible(true);
         }
         
-        if(jAccountTextField.getText().compareTo("gerente") == 0){
+        if(txtLoginLogin.getText().compareTo("gerente") == 0){
             MainManagerJFrame costumerJFrame = new MainManagerJFrame();
             this.setVisible(false);
             costumerJFrame.setVisible(true);
@@ -141,8 +149,9 @@ public class LoginJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jAccountTextField;
     private javax.swing.JToggleButton jConfirmButton;
-    private javax.swing.JLabel jLoginLabel;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblLoginLogin;
+    private javax.swing.JTextField txtLoginLogin;
     // End of variables declaration//GEN-END:variables
 }

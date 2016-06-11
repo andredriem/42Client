@@ -28,7 +28,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         DefaultListModel temp = new DefaultListModel();
         
         for(i=0;i<dishes.size();i++){
-            temp.addElement("<html>"+dishes.get(i).getName()+"   preco:"+Float.toString(dishes.get(i).getPrice())+"<br>Descricao: "+dishes.get(i).getDescription());
+            temp.addElement("<html><ul>"+dishes.get(i).getName()+"<li><b>Preco: </b>"+Float.toString(dishes.get(i).getPrice())+"</li><li><b>Descricao: </b>"+dishes.get(i).getDescription()+"</li></ul></html>");
         }
         jList1.setModel(temp);
     }
@@ -46,7 +46,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         jList1 = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jScrollPane1.setViewportView(jList1);
 

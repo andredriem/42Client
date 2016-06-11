@@ -32,9 +32,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLoginLabel" min="-2" pref="115" max="-2" attributes="0"/>
-                          <Component id="jAccountTextField" min="-2" pref="115" max="-2" attributes="0"/>
+                          <Component id="lblLoginLogin" min="-2" pref="115" max="-2" attributes="0"/>
+                          <Component id="txtLoginLogin" min="-2" pref="115" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblLogin" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="147" max="32767" attributes="0"/>
@@ -44,10 +48,12 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-              <Component id="jLoginLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jAccountTextField" min="-2" max="-2" attributes="0"/>
+              <Component id="lblLogin" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+              <Component id="lblLoginLogin" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="txtLoginLogin" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="199" max="32767" attributes="0"/>
               <Component id="jConfirmButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -56,7 +62,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLoginLabel">
+    <Component class="javax.swing.JLabel" name="lblLoginLogin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Digite Seu Login:"/>
       </Properties>
@@ -69,13 +75,21 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jConfirmButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jAccountTextField">
+    <Component class="javax.swing.JTextField" name="txtLoginLogin">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="Seu Login"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jAccountTextFieldActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLoginLoginActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblLogin">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Fa&#xe7;a seu login"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -59,7 +59,7 @@ public class ClientSocket {
         try{
             connectServer();
             String dishes_csv;      
-            toServer.writeBytes(REQUEST_MENU_STR); 
+            toServer.writeBytes(REQUEST_MENU_STR+'\n'); 
             dishes_csv = fromServer.readLine();
             return dishes_csv; 
             
@@ -75,13 +75,14 @@ public class ClientSocket {
         try{
             toServer.writeBytes(REQUEST_SEND_DISH_STR+
                     dish.getName()+":"+
-                    dish.getId()+":"+
-                    dish.getPrice()+":"+
                     dish.getDescription()+":"+
                     dish.isGluten()+":"+
                     dish.isVegan()+":"+
                     dish.isVegetarian()+":"+
-                    dish.isLactose()+
+                    dish.isLactose()+":"+
+                    dish.getType()+":"+
+                    dish.getDiscount()+":"+
+                    dish.getPrice()+":"+                    
                     "\n"
                     );
             if(fromServer.readLine()!="sent") throw new SecurityException("invalid CSV");
@@ -138,7 +139,6 @@ public class ClientSocket {
      * Checks if client is connected to server, if not: connects to server.
      */
     private void connectServer(){
-
         try{
             client = new Socket(ip,port);
             toServer = new DataOutputStream(client.getOutputStream());

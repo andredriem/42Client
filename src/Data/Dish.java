@@ -15,9 +15,12 @@ public class Dish extends AbstractDataFromServer{
     
     //Atributes not final.
     private String name;
-    private int id;
+//    private int id;
+    private float discount;
     private float price; 
     private String description;
+    private String type;
+
     
     
     private boolean gluten;
@@ -27,17 +30,19 @@ public class Dish extends AbstractDataFromServer{
     
   
     
-    public Dish(String name, int id, float price, String description, boolean gluten, boolean vegan, boolean vegetarian, boolean lactose) {
+    public Dish(String name, String description, boolean gluten, boolean vegan, boolean vegetarian, boolean lactose, String type, float discount, float price) {
         
         super();
         this.name = name;
-        this.id = id;
+//        this.id = id;
         this.price = price;
+        this.discount = discount;
         this.description = description;
         this.gluten = gluten;
         this.vegan = vegan;
         this.vegetarian = vegetarian;
         this.lactose = lactose;
+        this.type = type;
     }
 
     /**
@@ -49,11 +54,19 @@ public class Dish extends AbstractDataFromServer{
 
     /**
      * @return the id
-     */
+     *
     public int getId() {
         return id;
     }
-
+    */
+    
+    /**
+     * @return the discount
+     */
+    public float getDiscount(){
+        return discount;
+    }
+    
     /**
      * @return the price
      */
@@ -96,8 +109,12 @@ public class Dish extends AbstractDataFromServer{
         return lactose;
     }
     
+    public String getType(){
+        return type;
+    }
+    
     public void sendDish(){
-            mainSocket.sendDish(this);
+        mainSocket.sendDish(this);
     }
 
     /**
@@ -109,11 +126,19 @@ public class Dish extends AbstractDataFromServer{
 
     /**
      * @param id the id to set
-     */
+     *
     public void setId(int id) {
         this.id = id;
     }
-
+    */
+    
+    /*
+    * @param discount the discount to set
+    */
+    public void setDiscount(float discount){
+        this.discount = discount;
+    }
+    
     /**
      * @param price the price to set
      */
@@ -154,6 +179,13 @@ public class Dish extends AbstractDataFromServer{
      */
     public void setLactose(boolean lactose) {
         this.lactose = lactose;
+    }
+    
+    /*
+    * @param type the type to set
+    */
+    public void setType(String type){
+        this.type = type;
     }
     
 }
