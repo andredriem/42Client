@@ -25,9 +25,10 @@ public class ClientSocket {
     private static final String REQUEST_SEND_DISH_STR = "insertDish@";
     private static final String REQUEST_SEND_MESSAGE_STR = "sendMessage@";
     private static final String REQUEST_GET_DISH_STR = "getDish@";
+    private static final String REQUEST_DELETE_DISH_STR = "deleteDish@";
     
     //CONSTANTS
-    private static final int DISH_CSV = 8;
+    private static final int DISH_CSV = 9;
     
     private String ip;
     private int port;
@@ -124,27 +125,25 @@ public class ClientSocket {
         }       
     }
     
-/*
+
     public Dish getSpecifcDish(String dishName){
             Dish dish = null;
             connectServer();
         try{
-            Menu menu = new Menu();
-            ArrayList<Dish> dishes = menu.getDishes();
-                for(Dish d : dishes){
-                    if(d.getName() != null && d.getName().contains(search))
-                    //something here
-                }
+            String dishes_csv;
+            toServer.writeBytes(REQUEST_MENU_STR+'\n');
+            //...
         }catch(IOException e){
             e.printStackTrace();
-            
         } 
         
         return dish;
     }
-*/
+
     
-    
+    public void deleteDish(){
+        
+    }
     
     /**
      * Checks if client is connected to server, if not: connects to server.
