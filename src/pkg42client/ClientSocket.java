@@ -133,6 +133,7 @@ public class ClientSocket {
             String dishes_csv;
             toServer.writeBytes(REQUEST_MENU_STR+'\n');
             //...
+            //.... 
         }catch(IOException e){
             e.printStackTrace();
         } 
