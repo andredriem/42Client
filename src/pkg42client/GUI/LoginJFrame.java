@@ -5,6 +5,9 @@
  */
 package pkg42client.GUI;
 
+import com.sun.glass.events.KeyEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import pkg42client.ClientSocket;
 
 /**
@@ -21,6 +24,7 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() {
         initComponents();
+        
     }
 
     /**
