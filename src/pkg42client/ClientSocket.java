@@ -8,6 +8,7 @@ package pkg42client;
 import Data.Dish;
 import Data.Message;
 import Data.Menu;
+import Data.Order;
 import java.util.ArrayList;
 import java.net.*;
 import java.io.*;
@@ -26,6 +27,7 @@ public class ClientSocket {
     private static final String REQUEST_SEND_MESSAGE_STR = "sendMessage@";
     private static final String REQUEST_GET_DISH_STR = "getDish@";
     private static final String REQUEST_DELETE_DISH_STR = "deleteDish@";
+    private static final String REQUEST_SEND_ORDER_STR = "addDishToOrder@";
     
     //CONSTANTS
     private static final int DISH_CSV = 9;
@@ -145,6 +147,31 @@ public class ClientSocket {
     public void deleteDish(){
         
     }
+    
+    //só falta fazer a iteração dentro do ArrayList de Dish
+    public void sendOrder(Order order){
+       connectServer();
+        try{
+            ArrayList<Dish> dishes = order.getDishes();
+            //if(dishes.hasNext()){
+                    toServer.writeBytes(REQUEST_SEND_ORDER_STR+"['"+
+                            order.getId_order()+"','"+
+                            order.getTable_no()+"','"+
+                            order.getStatus()+"','"+
+                            //d+
+                            "]\n"
+                            );
+                    String serverResponse = fromServer.readLine();
+                    if(!(serverResponse.equals("true"))) throw new SecurityException("invalid CSV");
+                    System.out.println(serverResponse);
+               
+            //}
+            client.close();
+        }catch(IOException e){
+            e.printStackTrace();
+            
+        }
+    } 
     
     /**
      * Checks if client is connected to server, if not: connects to server.
