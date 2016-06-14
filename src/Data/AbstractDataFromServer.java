@@ -14,6 +14,16 @@ import pkg42client.ClientSocket;
 public class AbstractDataFromServer {
     
     public ClientSocket mainSocket;
+    
+    public static final String REQUEST_MENU_STR = "getMenu@";
+    public static final String REQUEST_SEND_DISH_STR = "insertDish@";
+    public static final String REQUEST_SEND_MESSAGE_STR = "sendMessage@";
+    public static final String REQUEST_GET_DISH_STR = "getDish@";
+    public static final String REQUEST_DELETE_DISH_STR = "deleteDish@";
+    public static final String REQUEST_SEND_ORDER_STR = "sendOrder@";
+    public static final String REQUEST_ADD_DISH_ORDER_STR = "addDishToOrder@";
+    public static final String REQUEST_RESET_ORDER_STR = "ressetOrder@";
+    public static final String REQUEST_GET_ORDER_STR = "getOrder@";
 
     
     
