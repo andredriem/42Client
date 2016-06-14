@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtPesquisarPrecoSearch" min="-2" pref="172" max="-2" attributes="0"/>
+                  <Component id="txtPesquisarDescontoSearch" min="-2" pref="172" max="-2" attributes="0"/>
+                  <Component id="lblPesquisarPrecoSearch" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPesquisarDescontoSearch" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPesquisarTipoSearch" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
+                  <Component id="lblPesquisarTipoSearch" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPesquisarChaveSearch" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
+                  <Component id="lblPesquisarChaveSearch" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPesquisarNomeSearch" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
+                  <Component id="lblPesquisarNomeSearch" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblPesquisarAtributosSearch" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboGlutenSearch" min="-2" pref="134" max="-2" attributes="0"/>
+                  <Component id="comboVeganoSearch" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                  <Component id="comboVegetarianoSearch" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                  <Component id="comboLactoseSearch" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                  <Component id="btnPesquisarSearch" min="-2" pref="134" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblPesquisarNomeSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPesquisarAtributosSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtPesquisarNomeSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboGlutenSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblPesquisarChaveSearch" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboVeganoSearch" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="txtPesquisarChaveSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboVegetarianoSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="comboLactoseSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPesquisarTipoSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Component id="txtPesquisarTipoSearch" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="lblPesquisarDescontoSearch" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                      <Component id="txtPesquisarDescontoSearch" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblPesquisarPrecoSearch" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="txtPesquisarPrecoSearch" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="btnPesquisarSearch" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="134" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="txtPesquisarNomeSearch">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPesquisarNomeSearch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Procura por Nome:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnPesquisarSearch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pesquisar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPesquisarSearchActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPesquisarChaveSearch">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Separar palavras-chave por v&#xed;rgulas"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPesquisarChaveSearch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pesquisar palavras-chave:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPesquisarAtributosSearch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pesquisar por atributo:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboGlutenSearch">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Gluten"/>
+            <StringItem index="1" value="Sim"/>
+            <StringItem index="2" value="N&#xe3;o"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboVegetarianoSearch">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Vegetariano"/>
+            <StringItem index="1" value="Sim"/>
+            <StringItem index="2" value="N&#xe3;o"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboVeganoSearch">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Vegano"/>
+            <StringItem index="1" value="Sim"/>
+            <StringItem index="2" value="N&#xe3;o"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboLactoseSearch">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Lactose"/>
+            <StringItem index="1" value="Sim"/>
+            <StringItem index="2" value="N&#xe3;o"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPesquisarTipoSearch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pesquisar por Tipo:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPesquisarTipoSearch">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPesquisarDescontoSearch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pesquisar por Desconto:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPesquisarDescontoSearch">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPesquisarPrecoSearch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Procurar por Pre&#xe7;o:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPesquisarPrecoSearch">
+    </Component>
+  </SubComponents>
+</Form>
