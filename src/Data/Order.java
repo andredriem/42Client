@@ -6,22 +6,23 @@
 package Data;
 import Data.Dish;
 import java.util.ArrayList;
+import pkg42client.ClientSocket;
 /**
  *
  * @author ana.sanchotene
  */
-public class Order {
+public class Order extends AbstractDataFromServer{
    //Atributtes
     private int id_order;
     private int table_no;
     private String status;
-    private ArrayList<Dish> dishes;
     
-    public Order(int id_order, int table_no, String status, ArrayList<Dish> dishes){
-        this.id_order= id_order;
+    public Order(int table_no, String status){
         this.table_no = table_no;
-        this.status = status;
-        this.dishes = dishes;    
+        this.status = status; 
+        this.id_order = openOrder();
+        addDish((new Menu()).getDish(0), 33, true);
+        reset();
     }
     
     public int getId_order(){
@@ -36,14 +37,38 @@ public class Order {
         return status;
     }
     
-    public ArrayList<Dish> getDishes(){
-        return dishes;
+    
+    //Returns order Id
+    private int openOrder(){
+        String csv = REQUEST_SEND_ORDER_STR + "[" + Integer.toString(this.table_no) + "]";
+        String return_string = mainSocket.sendToServer(csv);
+        return new Integer(return_string);
     }
     
-    public void sendOrder(){
-        /*função de envio ainda vai ser feita*/
-        //
+    public void addDish(Dish dish,int quantity,boolean half_portion){
+        String csv = REQUEST_ADD_DISH_ORDER_STR + "[" +
+                     id_order + "," +
+                     dish.getName().substring(1) + "," +
+                     quantity + "," +
+                     ((half_portion) ? "1" : "0") + "]";
+        String return_string = mainSocket.sendToServer(csv);
+        if(return_string.equals("false")) throw new SecurityException("invalid CSV (dish name is probably incorrect)");
     }
     
+    public void reset(){
+        String csv = REQUEST_RESET_ORDER_STR + "[" +
+                     id_order + "]";
+        String return_string = mainSocket.sendToServer(csv);
+        if(return_string.equals("false")) throw new SecurityException("cannot reset order");
+    }
     
+    public ArrayList<Dish> getOrderDishes(){
+        String csv = REQUEST_GET_ORDER_STR + "[" +
+                     id_order + "]";        
+        String return_string = mainSocket.sendToServer(csv);
+        return null;
+    }
+        
 }
+    
+    
