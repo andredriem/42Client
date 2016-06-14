@@ -12,6 +12,8 @@ import Data.Order;
 import java.util.ArrayList;
 import java.net.*;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *This class handles all the comunication with the server.
@@ -50,6 +52,20 @@ public class ClientSocket {
         this.port = port;
         client = new Socket();
         //connectServer();
+    }
+    
+    public String sendToServer(String csv){
+        try{
+        connectServer();
+        toServer.writeBytes(csv+"\n");
+        return fromServer.readLine();
+        
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new SecurityException("invalid CSV");
+        }
+        
+        
     }
     
     
@@ -148,30 +164,7 @@ public class ClientSocket {
         
     }
     
-    //só falta fazer a iteração dentro do ArrayList de Dish
-    public void sendOrder(Order order){
-       connectServer();
-        try{
-            ArrayList<Dish> dishes = order.getDishes();
-            //if(dishes.hasNext()){
-                    toServer.writeBytes(REQUEST_SEND_ORDER_STR+"['"+
-                            order.getId_order()+"','"+
-                            order.getTable_no()+"','"+
-                            order.getStatus()+"','"+
-                            //d+
-                            "]\n"
-                            );
-                    String serverResponse = fromServer.readLine();
-                    if(!(serverResponse.equals("true"))) throw new SecurityException("invalid CSV");
-                    System.out.println(serverResponse);
-               
-            //}
-            client.close();
-        }catch(IOException e){
-            e.printStackTrace();
-            
-        }
-    } 
+ 
     
     /**
      * Checks if client is connected to server, if not: connects to server.
