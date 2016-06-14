@@ -21,8 +21,12 @@ public class Order extends AbstractDataFromServer{
         this.table_no = table_no;
         this.status = status; 
         this.id_order = openOrder();
-        addDish((new Menu()).getDish(0), 33, true);
-        reset();
+    }
+    
+    public Order(int table_no, String status, int id_order){
+        this.table_no = table_no;
+        this.status = status; 
+        this.id_order = id_order;
     }
     
     public int getId_order(){
@@ -67,6 +71,13 @@ public class Order extends AbstractDataFromServer{
                      id_order + "]";        
         String return_string = mainSocket.sendToServer(csv);
         return null;
+    }
+    
+    public String getOrderDishesSTR(){
+        String csv = REQUEST_GET_ORDER_STR + "[" +
+                     id_order + "]";        
+        String return_string = mainSocket.sendToServer(csv);
+        return return_string;
     }
         
 }
