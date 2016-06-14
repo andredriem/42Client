@@ -43,10 +43,10 @@ public class TypeCardChoice extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Pagamento com Cartão");
+        jLabel1.setText("Pagamento");
 
         PayChoice.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        PayChoice.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "---", "Crédito", "Débito" }));
+        PayChoice.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "---", "Dinheiro", "Cartão Crédito", "Cartão Débito" }));
         PayChoice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PayChoiceActionPerformed(evt);
@@ -69,7 +69,9 @@ public class TypeCardChoice extends javax.swing.JFrame {
                 .addContainerGap(110, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PayChoice, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(48, 48, 48)))
                 .addGap(106, 106, 106))
             .addGroup(layout.createSequentialGroup()
                 .addGap(154, 154, 154)
@@ -79,9 +81,9 @@ public class TypeCardChoice extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(45, 45, 45)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addGap(26, 26, 26)
                 .addComponent(PayChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(ConfirmType)
@@ -92,15 +94,22 @@ public class TypeCardChoice extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConfirmTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmTypeActionPerformed
-        if(PayChoice.getSelectedIndex() == 2) {
-            DebitPayment debitJFrame = new DebitPayment();
-            this.setVisible(false);
-            debitJFrame.setVisible(true);
-        }
         if(PayChoice.getSelectedIndex() == 1) {
+            MoneyPayment moneyJFrame = new MoneyPayment();
+            this.setVisible(false);
+            moneyJFrame.setVisible(true);
+        }
+        
+        if(PayChoice.getSelectedIndex() == 2) {
             CreditPayment creditJFrame = new CreditPayment();
             this.setVisible(false);
             creditJFrame.setVisible(true);
+        }
+        
+        if(PayChoice.getSelectedIndex() == 3) {
+            CreditPayment debitJFrame = new CreditPayment();
+            this.setVisible(false);
+            debitJFrame.setVisible(true);
         }
     }//GEN-LAST:event_ConfirmTypeActionPerformed
 
