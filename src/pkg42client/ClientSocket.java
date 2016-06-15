@@ -126,6 +126,10 @@ public class ClientSocket {
         return sendToServer(csv);
     }
     
+    public String getOrderInfo(String csv){
+        return sendToServer(csv);
+    }
+    
  
     
     public void sendDish(Dish dish){
@@ -198,10 +202,6 @@ public class ClientSocket {
         return dish;
     }
 
-    
-    public void deleteDish(){
-        
-    }
     
  
     

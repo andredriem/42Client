@@ -109,16 +109,16 @@ public class MoneyPayment extends javax.swing.JFrame {
     }//GEN-LAST:event_receivedValueActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        Float price = 0.1f;
-        //price = Data.Order.getOrderPrice();
-        if (Integer.parseInt(receivedValue.getText()) == price){
+        
+        Float price = Data.Order.getOrderPrice();
+        if (comparePrices(Float.parseFloat(receivedValue.getText()),price)){
             changeStatusFinished();
         }
 
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     private boolean comparePrices(Float recebido, Float pago){
-        return true;
+        return recebido == pago;
     }
     
     public void changeStatusFinished(){
