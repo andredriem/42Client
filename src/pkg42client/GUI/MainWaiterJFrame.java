@@ -7,12 +7,12 @@ package pkg42client.GUI;
 
 /**
  *
- * @author Ana
+ * @author andre
  */
 public class MainWaiterJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainWaiterJFrame
+     * Creates new form MainManagerJFrame
      */
     public MainWaiterJFrame() {
         initComponents();
@@ -27,21 +27,103 @@ public class MainWaiterJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        searchOrder = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        acceptPayment = new javax.swing.JButton();
+        MsgsClient = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        searchOrder.setText("Pesquisar Pedido");
+        searchOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchOrderActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Menu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Tela Principal");
+
+        acceptPayment.setText("Pagamento");
+        acceptPayment.setEnabled(false);
+        acceptPayment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acceptPaymentActionPerformed(evt);
+            }
+        });
+
+        MsgsClient.setText("Mensagens");
+        MsgsClient.setActionCommand("Mensagens");
+        MsgsClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MsgsClientActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(searchOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addComponent(acceptPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(MsgsClient, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(165, 165, 165))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MsgsClient, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(acceptPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void searchOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchOrderActionPerformed
+        OrderStatusJFrame orderJFrame = new OrderStatusJFrame();
+        orderJFrame.setVisible(true);
+    }//GEN-LAST:event_searchOrderActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        MenuJFrame menuJFrame = new MenuJFrame();
+        menuJFrame.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void acceptPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptPaymentActionPerformed
+        MoneyPayment money = new MoneyPayment();
+        money.setVisible(true);
+    }//GEN-LAST:event_acceptPaymentActionPerformed
+
+    private void MsgsClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MsgsClientActionPerformed
+    }//GEN-LAST:event_MsgsClientActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,6 +151,7 @@ public class MainWaiterJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MainWaiterJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -79,5 +162,10 @@ public class MainWaiterJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton MsgsClient;
+    private javax.swing.JButton acceptPayment;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton searchOrder;
     // End of variables declaration//GEN-END:variables
 }

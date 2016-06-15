@@ -114,6 +114,12 @@ public class LoginJFrame extends javax.swing.JFrame {
             this.setVisible(false);
             costumerJFrame.setVisible(true);
         }
+        
+        if(txtLoginLogin.getText().compareTo("atendente") == 0){
+            MainWaiterJFrame waiterJFrame = new MainWaiterJFrame();
+            this.setVisible(false);
+            waiterJFrame.setVisible(true);
+        }
     }//GEN-LAST:event_jConfirmButtonActionPerformed
 
     /**
