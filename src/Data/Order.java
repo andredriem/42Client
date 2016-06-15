@@ -13,7 +13,7 @@ import pkg42client.ClientSocket;
  */
 public final class Order extends AbstractDataFromServer{
    //Atributtes
-    private int id_order;
+    public int id_order;
     private int table_no;
     private String status;
 

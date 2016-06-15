@@ -6,6 +6,7 @@
 package pkg42client.GUI;
 
 import javax.swing.JFrame;
+import Data.Order;
 
 /**
  *
@@ -94,6 +95,7 @@ public class TypeCardChoice extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConfirmTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmTypeActionPerformed
+//        int orderStatus = Order.getOrderStatus();
         if(PayChoice.getSelectedIndex() == 1) {
             MoneyPayment moneyJFrame = new MoneyPayment();
             this.setVisible(false);

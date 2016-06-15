@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package pkg42client.GUI;
-
+import Data.Order;
 /**
  *
  * @author ana.sanchotene
@@ -109,9 +109,9 @@ public class MoneyPayment extends javax.swing.JFrame {
     }//GEN-LAST:event_receivedValueActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        Order order = //pedido
-        Float price = order.getOrderPrice();
-        if(comparePrices(receivedValue, price)){
+        Float price = 0.1f;
+        //price = Data.Order.getOrderPrice();
+        if (Integer.parseInt(receivedValue.getText()) == price){
             changeStatusFinished();
         }
 
