@@ -89,6 +89,10 @@ public class ClientSocket {
         return null;
     }
     
+    public String addDishtoOrder(String csv){
+        return sendToServer(csv);
+    }
+    
     public void sendDish(Dish dish){
         connectServer();
         try{

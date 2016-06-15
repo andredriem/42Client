@@ -65,7 +65,7 @@ public final class Order extends AbstractDataFromServer{
                      dish.getName().substring(1) + "," +
                      quantity + "," +
                      ((half_portion) ? "1" : "0") + "]";
-        String return_string = mainSocket.sendToServer(csv);
+        String return_string = mainSocket.addDishtoOrder(csv);
         if(return_string.equals("false")) throw new SecurityException("invalid CSV (dish name is probably incorrect)");
     }
     
