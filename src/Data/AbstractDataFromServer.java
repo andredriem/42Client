@@ -24,6 +24,8 @@ public class AbstractDataFromServer {
     public static final String REQUEST_ADD_DISH_ORDER_STR = "addDishToOrder@";
     public static final String REQUEST_RESET_ORDER_STR = "ressetOrder@";
     public static final String REQUEST_GET_ORDER_STR = "getOrder@";
+    public static final String REQUEST_CHANGE_ORDER_STATUS_STR = "changeOrderStatus@";
+    public static final String REQUEST_ORDER_INFO_STR = "getOrderInfo@";
 
     
     
