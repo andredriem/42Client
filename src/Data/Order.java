@@ -100,6 +100,14 @@ public final class Order extends AbstractDataFromServer{
         String return_string = mainSocket.setStatus(csv);
         if(return_string.equals("false")) throw new SecurityException("CSV ERROR! Order Status not altered");        
     }
+    
+    public Float getOrderPrice(){
+        String csv = ClientSocket.REQUEST_ORDER_PRICE + id_order;
+        String return_string = mainSocket.setStatus(csv);
+        if(return_string.equals("False")) 
+            throw new SecurityException("CSV ERROR! Order price not taken");
+        return Float.parseFloat(return_string);
+    }
         
 }
     
