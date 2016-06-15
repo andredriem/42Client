@@ -186,61 +186,76 @@ public class SearchJFrame extends javax.swing.JFrame {
     private void btnPesquisarSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarSearchActionPerformed
         Menu menu = new Menu();
         for(Dish d: menu.getDishes()){
-            try{
-                if(d.getName().equalsIgnoreCase(txtPesquisarNomeSearch.getText())) {
-                    temp.addElement("</li></ul></html>"+"<html><ul>"+d.getName()+"<li><b>Preco: </b>"+Float.toString(d.getPrice())+"</li><li><b>Descricao: </b>"+d.getDescription()+"</li></ul></html>");
-                }                
-            }
-            catch(NullPointerException npe){
-                System.out.println("String de nome vazia");
-            }
+            if(!(validateStr(d.getName(),txtPesquisarNomeSearch.getText()))){
+                continue;
+            }        
+            if(!(validateDescricao(d.getDescription(),txtPesquisarChaveSearch.getText()))){
+                continue;
+            }        
+            if(!(validateStr(d.getType(),txtPesquisarTipoSearch.getText()))){
+                continue;
+            }        
 
-            try{
-                if(d.getDescription().contains(txtPesquisarChaveSearch.getText())) {
-                    temp.addElement("</li></ul></html>"+"<html><ul>"+d.getName()+"<li><b>Preco: </b>"+Float.toString(d.getPrice())+"</li><li><b>Descricao: </b>"+d.getDescription()+"</li></ul></html>");
-                }
+            if(!(validateNum(d.getDiscount(),txtPesquisarDescontoSearch.getText()))){
+                continue;
+            }        
+            if(!(validateNum(d.getPrice(),txtPesquisarPrecoSearch.getText()))){
+                continue;
+            }        
+            
+            
+            if(jCheckBox1.isSelected() && d.isGluten()){
+                continue;
             }
-            catch(NullPointerException npe){
-                System.out.println("String de descricao vazia");
+            if(jCheckBox4.isSelected() && d.isLactose()){
+                continue;
             }
-            /*
-            try{
-                if(d.isGluten() == jCheckBox1.isSelected()){
-                    
-                }
+            if(jCheckBox2.isSelected() && !(d.isVegan())){
+                continue;
             }
-            */
-            try{
-                if(d.getType().equalsIgnoreCase(txtPesquisarTipoSearch.getText())) {
-                    temp.addElement("</li></ul></html>"+"<html><ul>"+d.getName()+"<li><b>Preco: </b>"+Float.toString(d.getPrice())+"</li><li><b>Descricao: </b>"+d.getDescription()+"</li></ul></html>");
-                }
+            if(jCheckBox3.isSelected() && !(d.isVegetarian())){
+                continue;
             }
-            catch(NullPointerException npe){
-                System.out.println("String de tipo vazia");
-            }
-
-            try{
-                if(d.getDiscount() == Float.parseFloat(txtPesquisarDescontoSearch.getText())) {
-                    temp.addElement("</li></ul></html>"+"<html><ul>"+d.getName()+"<li><b>Preco: </b>"+Float.toString(d.getPrice())+"</li><li><b>Descricao: </b>"+d.getDescription()+"</li></ul></html>");
-                }
-            }
-            catch(NumberFormatException npe){
-                System.out.println("String de desconto vazia");
-            }
-
-            try{
-                if(d.getPrice() == Float.parseFloat(txtPesquisarPrecoSearch.getText())) {
-                    temp.addElement("</li></ul></html>"+"<html><ul>"+d.getName()+"<li><b>Preco: </b>"+Float.toString(d.getPrice())+"</li><li><b>Descricao: </b>"+d.getDescription()+"</li></ul></html>");
-                }
-            }
-            catch(NumberFormatException npe){
-                System.out.println("String de preco vazia");
-            }
-
+            temp.addElement("<html><ul>"+d.getName()+"<li><b>Preco: </b>"+Float.toString(d.getPrice())+
+                "</li><li><b>Descricao: </b>"+d.getDescription()+"</li></ul></html>");
         }
         this.setVisible(false);
+
     }//GEN-LAST:event_btnPesquisarSearchActionPerformed
 
+    private boolean validateStr(String bdstring, String intstring){
+        if(intstring.isEmpty()){
+            return true;
+        }
+        if(bdstring.equalsIgnoreCase(intstring)) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean validateDescricao(String bdstring, String intstring){
+        if(intstring.isEmpty()){
+            return true;
+        }
+        if(bdstring.contains(intstring)) {
+            return true;
+        }
+        return false;
+    }
+    
+    private boolean validateNum(Float bdfloat, String intstring){
+        try{
+            Float intfloat = Float.parseFloat(intstring);
+            if(bdfloat == intfloat) {
+                return true;
+            }
+        }
+        catch(NumberFormatException npe){
+            return true;
+        }
+        return false;
+    }
+    
     public DefaultListModel getList(){
         return temp;
     }
