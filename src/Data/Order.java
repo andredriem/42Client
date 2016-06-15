@@ -38,7 +38,7 @@ public final class Order extends AbstractDataFromServer{
     public int getTable_no(){
         String csv = REQUEST_ORDER_INFO_STR + "[" +
                      id_order + "]"; 
-        String return_string = mainSocket.sendToServer(csv);
+        String return_string = mainSocket.requestOrderInfo(csv);
         String[] return_list = return_string.split(",");
         return Integer.parseInt(return_list[1].substring(1));
     }
@@ -46,7 +46,7 @@ public final class Order extends AbstractDataFromServer{
     public String getStatus(){
         String csv = REQUEST_ORDER_INFO_STR + "[" +
                      id_order + "]"; 
-        String return_string = mainSocket.sendToServer(csv);
+        String return_string = mainSocket.requestOrderInfo(csv);
         String[] return_list = return_string.split(",");
         return return_list[2].substring(3,return_list[2].length()-2);
     }
@@ -55,7 +55,7 @@ public final class Order extends AbstractDataFromServer{
     //Returns order Id
     private int openOrder(){
         String csv = REQUEST_SEND_ORDER_STR + "[" + Integer.toString(this.table_no) + "]";
-        String return_string = mainSocket.sendToServer(csv);
+        String return_string = mainSocket.openOrder(csv);
         return new Integer(return_string);
     }
     
@@ -72,7 +72,7 @@ public final class Order extends AbstractDataFromServer{
     public void reset(){
         String csv = REQUEST_RESET_ORDER_STR + "[" +
                      id_order + "]";
-        String return_string = mainSocket.sendToServer(csv);
+        String return_string = mainSocket.resetOrder(csv);
         if(return_string.equals("false")) throw new SecurityException("cannot reset order");
     }
     
@@ -81,7 +81,7 @@ public final class Order extends AbstractDataFromServer{
     public ArrayList<Dish> getOrderDishes(){
         String csv = REQUEST_GET_ORDER_STR + "[" +
                      id_order + "]";        
-        String return_string = mainSocket.sendToServer(csv);
+        String return_string = mainSocket.getOrderDishes(csv);
         return null;
     }
     
@@ -90,14 +90,14 @@ public final class Order extends AbstractDataFromServer{
     public String getOrderDishesSTR(){
         String csv = REQUEST_GET_ORDER_STR + "[" +
                      id_order + "]";        
-        String return_string = mainSocket.sendToServer(csv);
+        String return_string = mainSocket.getOrderDishesSTR(csv);
         return return_string;
     }
     
     public void setStatus(String status){
         String csv = REQUEST_CHANGE_ORDER_STATUS_STR + "[" +
                      id_order + ",'" + status + "']";
-        String return_string = mainSocket.sendToServer(csv);
+        String return_string = mainSocket.setStatus(csv);
         if(return_string.equals("false")) throw new SecurityException("CSV ERROR! Order Status not altered");        
     }
         

@@ -23,13 +23,17 @@ import java.util.logging.Logger;
 public class ClientSocket {
     
     
-    //COMMAND STRINGS
-    private static final String REQUEST_MENU_STR = "getMenu@";
-    private static final String REQUEST_SEND_DISH_STR = "insertDish@";
-    private static final String REQUEST_SEND_MESSAGE_STR = "sendMessage@";
-    private static final String REQUEST_GET_DISH_STR = "getDish@";
-    private static final String REQUEST_DELETE_DISH_STR = "deleteDish@";
-    private static final String REQUEST_SEND_ORDER_STR = "addDishToOrder@";
+    public static final String REQUEST_MENU_STR = "getMenu@";
+    public static final String REQUEST_SEND_DISH_STR = "insertDish@";
+    public static final String REQUEST_SEND_MESSAGE_STR = "sendMessage@";
+    public static final String REQUEST_GET_DISH_STR = "getDish@";
+    public static final String REQUEST_DELETE_DISH_STR = "deleteDish@";
+    public static final String REQUEST_SEND_ORDER_STR = "sendOrder@";
+    public static final String REQUEST_ADD_DISH_ORDER_STR = "addDishToOrder@";
+    public static final String REQUEST_RESET_ORDER_STR = "ressetOrder@";
+    public static final String REQUEST_GET_ORDER_STR = "getOrder@";
+    public static final String REQUEST_CHANGE_ORDER_STATUS_STR = "changeOrderStatus@";
+    public static final String REQUEST_ORDER_INFO_STR = "getOrderInfo@";
     
     //CONSTANTS
     private static final int DISH_CSV = 9;
@@ -92,6 +96,32 @@ public class ClientSocket {
     public String addDishtoOrder(String csv){
         return sendToServer(csv);
     }
+    
+    public String requestOrderInfo(String csv){
+        return sendToServer(csv);
+    }
+    
+    public String openOrder(String csv){
+        return sendToServer(csv);
+    }  
+    
+    public String resetOrder(String csv){
+        return sendToServer(csv);
+    }  
+
+    public String getOrderDishes(String csv){
+        return sendToServer(csv);
+    }      
+    
+    public String getOrderDishesSTR(String csv){
+        return sendToServer(csv);
+    }      
+    
+    public String setStatus(String csv){
+        return sendToServer(csv);
+    }      
+    
+ 
     
     public void sendDish(Dish dish){
         connectServer();
