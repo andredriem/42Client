@@ -110,7 +110,7 @@ public class MoneyPayment extends javax.swing.JFrame {
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         Order order = //pedido
-        Float price = 
+        Float price = order.getOrderPrice();
         if(comparePrices(receivedValue, price)){
             changeStatusFinished();
         }
