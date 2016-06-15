@@ -34,6 +34,7 @@ public class ClientSocket {
     public static final String REQUEST_GET_ORDER_STR = "getOrder@";
     public static final String REQUEST_CHANGE_ORDER_STATUS_STR = "changeOrderStatus@";
     public static final String REQUEST_ORDER_INFO_STR = "getOrderInfo@";
+    public static final String REQUEST_ORDER_PRICE_STR = "getOrderPrice@";
     
     //CONSTANTS
     private static final int DISH_CSV = 9;
@@ -120,6 +121,10 @@ public class ClientSocket {
     public String setStatus(String csv){
         return sendToServer(csv);
     }      
+    
+    public String getOrderPrice(String csv){
+        return sendToServer(csv);
+    }
     
  
     

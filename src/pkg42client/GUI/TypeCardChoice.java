@@ -40,7 +40,7 @@ public class TypeCardChoice extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Pagamento");
@@ -107,7 +107,7 @@ public class TypeCardChoice extends javax.swing.JFrame {
         }
         
         if(PayChoice.getSelectedIndex() == 3) {
-            CreditPayment debitJFrame = new CreditPayment();
+            DebitPayment debitJFrame = new DebitPayment();
             this.setVisible(false);
             debitJFrame.setVisible(true);
         }
