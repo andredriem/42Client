@@ -25,9 +25,8 @@ public class CreditPayment extends javax.swing.JFrame {
         
         for(i=0;i<pendent;i++){
             System.err.println(Order.local_orders.get(0));
-            Order temporder = new Order(Order.local_orders.get(0));
+            Order temporder = new Order(Order.local_orders.get(i));
             total+= temporder.getOrderPrice();
-            Order.local_orders.remove(0);
         }
         
         String price_string = "Total: ";
@@ -129,7 +128,15 @@ public class CreditPayment extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        // dizer que pedido foi finalizado
+        int i;
+        int pendent = Order.local_orders.size(); 
+        for(i=0;i<pendent;i++){
+            Order.local_orders.remove(0);
+        }
+        
+        this.setVisible(false);
+// dizer que pedido foi finalizado
+        
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     /**
