@@ -6,6 +6,10 @@
 package pkg42client.GUI;
 
 import Data.Order;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -131,8 +135,17 @@ public class CreditPayment extends javax.swing.JFrame {
         int i;
         int pendent = Order.local_orders.size(); 
         for(i=0;i<pendent;i++){
+            Order temp_order = new Order(Order.local_orders.get(0));
+            temp_order.setStatus("finalizado");
             Order.local_orders.remove(0);
         }
+        
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(CreditPayment.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JOptionPane.showMessageDialog(null, "Pagamento Confirmado");
         
         this.setVisible(false);
 // dizer que pedido foi finalizado
