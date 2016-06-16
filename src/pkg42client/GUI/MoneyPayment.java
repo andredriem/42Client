@@ -110,7 +110,7 @@ public class MoneyPayment extends javax.swing.JFrame {
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         
-        Float price = Data.Order.getOrderPrice();
+        float price = 0;
         if (comparePrices(Float.parseFloat(receivedValue.getText()),price)){
             changeStatusFinished();
         }

@@ -5,6 +5,7 @@
  */
 package Data;
 import Data.Dish;
+import java.awt.List;
 import java.util.ArrayList;
 import pkg42client.ClientSocket;
 /**
@@ -16,6 +17,7 @@ public final class Order extends AbstractDataFromServer{
     public int id_order;
     private int table_no;
     private String status;
+    public static ArrayList<Integer> local_orders = new ArrayList<>();
 
     
     public Order(int table_no, String status){
@@ -25,10 +27,11 @@ public final class Order extends AbstractDataFromServer{
         System.out.println(getStatus());
     }
     
-    public Order(int table_no, String status, int id_order){
+    public Order(int id_order){
         this.id_order = id_order;
         this.table_no = getTable_no();
         this.status = getStatus(); 
+        
     }
     
     public int getId_order(){
@@ -102,11 +105,12 @@ public final class Order extends AbstractDataFromServer{
     }
     
     public Float getOrderPrice(){
-        String csv = ClientSocket.REQUEST_ORDER_PRICE_STR + id_order;
+        String csv = ClientSocket.REQUEST_ORDER_PRICE_STR + "[" + id_order + "]";
+        System.err.println(csv);
         String return_string = mainSocket.setStatus(csv);
         if(return_string.equals("false")) 
             throw new SecurityException("CSV ERROR! Order price not sent");
-        return Float.parseFloat(return_string);
+        return Float.parseFloat(return_string.substring(1,return_string.length()-1));
     }
     
     public String getOrderInfo(){
