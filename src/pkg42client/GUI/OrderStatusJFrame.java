@@ -91,8 +91,9 @@ public class OrderStatusJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Order order = new Order(1, "solicitado",Integer.parseInt(jTextField1.getText()));
-        jLabel1.setText("Estado: Solicitado");
+        Order order = new Order(Integer.parseInt(jTextField1.getText()));
+        
+        jLabel1.setText("Estado: " + order.getStatus());
         DefaultListModel temp = new DefaultListModel();
         temp.addElement(order.getOrderDishesSTR());
         jList1.setModel(temp);
