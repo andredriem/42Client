@@ -10,6 +10,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 import Data.Dish;
 import Data.Menu;
+import Data.Order;
+import Data.PayProcess;
 import pkg42client.ClientSocket;
 
 /**
@@ -131,8 +133,7 @@ public class MainCostumerJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        TypeCardChoice typeChoice = new TypeCardChoice();
-        typeChoice.setVisible(true);
+        PaymentJFrame paymentjframe = new PaymentJFrame();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
